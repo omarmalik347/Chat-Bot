@@ -13,7 +13,7 @@ with st.sidebar:
     #st.write('This is a generative AI Chat Bot.')
     
     # Use Hugging Face API Key from secrets or environment
-    api_key = os.getenv("llama3")
+    api_key = os.getenv("LLAMA3")
 
     if not api_key:
         st.error("API key is missing!")
