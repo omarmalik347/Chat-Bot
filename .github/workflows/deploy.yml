@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Set API Key as Environment Variable
-        run: echo "LLAMA3=${{ secrets.LLAMA3 }}" >> $GITHUB_ENV
+        run: echo "llama3=${{ secrets.llama3 }}" >> $GITHUB_ENV
 
       - name: Deploy Streamlit App
         run: streamlit run app.py --server.port 8501
