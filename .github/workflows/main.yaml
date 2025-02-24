@@ -1,2 +1,0 @@
-env:
-  llama3: ${{ secrets.llama3 }}
