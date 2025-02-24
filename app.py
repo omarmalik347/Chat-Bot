@@ -15,9 +15,12 @@ with st.sidebar:
     # Use Hugging Face API Key from GitHub Secrets
     api_key = os.getenv("LLAMA3")
 
-# Ensure there's an asyncio loop
-if not asyncio.get_event_loop().is_running():
+# Ensure there's an asyncio event loop
+try:
+    asyncio.get_running_loop()
+except RuntimeError:
     asyncio.set_event_loop(asyncio.new_event_loop())
+
 
 if not api_key:
     st.error("API key is missing!")
